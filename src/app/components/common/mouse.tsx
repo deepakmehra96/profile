@@ -6,7 +6,7 @@ const DynamicBackground = () => {
         background: 'radial-gradient(circle at center, #fff 0%, #f7f7f7 100%)',
     });
 
-    const handleMouseMove = (e: any) => {
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
         const x = e.clientX;
         const y = e.clientY;
         const width = window.innerWidth;

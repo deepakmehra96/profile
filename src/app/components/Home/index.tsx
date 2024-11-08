@@ -39,7 +39,7 @@ const MyProfile = () => {
         background: `#0f172a, radial-gradient(circle 100px at ${100}px ${100}px, red 10%, yellow 100%)`,
     });
 
-    const handleMouseMove = (e: any) => {
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
         const x = e.clientX;
         const y = e.clientY;
         const width = window.innerWidth;
