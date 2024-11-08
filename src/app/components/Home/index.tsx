@@ -34,6 +34,7 @@ const MainContainer = () => {
     );
 };
 
+
 const MyProfile = () => {
     const [bgStyle, setBgStyle] = useState({
         background: `#0f172a, radial-gradient(circle 100px at ${100}px ${100}px, red 10%, yellow 100%)`,
