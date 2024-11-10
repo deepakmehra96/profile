@@ -1,156 +1,202 @@
-// src/homeMain.scss
-
-// Optional: Define variables for consistency
+// Define variables
 $primary-color: #3EB489;
-$text-color: rgba(255, 255, 255, 0.75); // Equivalent to #0a0a0abf
-$shadow-color: rgba(128, 128, 128, 0.5); // Grey with 50% opacity
+$text-color: rgba(255, 255, 255, 0.75);
+$background-color: #0f172a;
+$shadow-color: rgba(128, 128, 128, 0.5);
+$font-family-main: Arial, sans-serif;
 
-// Reset global styles
 body {
-    margin: 0 auto;
-    padding: 40px 0 0 0;
-    font-family: Arial, sans-serif; // You can adjust the global font as needed
-    background: #0f172a
+    margin: 0;
+    padding: 60px 0;
+    font-family: $font-family-main;
+    background-color: $background-color;
+    color: $text-color;
 }
 
-// Container
 .container {
-    // Background Div
-    .backGroundDiv {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+
+    @media (max-width: 768px) {
+        width: 90%;
+    }
+}
+
+.leftColumn,
+.rightColumn {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+    .leftColumn {
+        width: 50%;
+        padding-right: 20px;
+    }
+
+    .rightColumn {
+        width: 50%;
+        padding-left: 20px;
+    }
+}
+
+.profileImageOut {
+    cursor: pointer;
+    height: 250px;
+    width: 250px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 1px 1px 10px 0.5px $shadow-color;
+    margin-bottom: 20px;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.profileInfo {
+    margin-top: 15px;
+
+    .nameMain {
+        font-family: monospace;
+        font-size: 35px;
+    }
+
+    .profileTitle {
+        font-size: 40px;
+        color: $primary-color;
+        margin-top: 20px;
+    }
+}
+
+.skillContainer {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+
+    .skills__skill {
+        padding: 10px 20px;
+        margin-bottom: 1rem;
+        margin-right: 1rem;
+        font-size: 16px;
+        background: rgba(153, 153, 153, 0.2);
+        border-radius: 5px;
+        font-weight: 600;
+        color: #fff;
+    }
+}
+
+.socialContainer {
+
+    .socialIconsOut {
+        margin-top: 20px;
         display: flex;
-        padding-top: 30px;
+        align-items: center;
+        flex-direction: row;
 
-        // Profile Image Container
-        .profileImageOut {
-            z-index: 999;
-            cursor: pointer;
-            height: 230px;
-            width: 230px;
-            border-radius: 50%;
-            overflow: hidden;
-            box-shadow: 1px 1px 10px 0.5px $shadow-color;
+        @media (max-width: 768px) {
+            width: 90%;
+        }
 
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
+    }
 
-            /* Optional Hover Effect
-      &:hover {
-        transform: rotateY(180deg);
-        transition: transform 0.6s;
-      }
-      */
+    .socialIcons {
+        cursor: pointer;
+        height: 30px;
+        width: 30px;
+        margin-right: 40px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+        }
+
+        .email-icon {
+            height: 80px;
+            width: 80px;
         }
     }
 
-    // Main Container
-    .mainConatiner {
-        // Note: Preserving the typo as per your component
-        height: 100%;
+    .contactInfoOut {
+        width: 70%;
+        margin-top: 15px;
         display: flex;
+        align-items: center;
+        justify-content: space-evenly;
         flex-direction: column;
-        align-items: flex-start;
 
-        // Slide Section
-        .slide {
-            margin-top: 20px;
-            text-align: center;
+    }
+}
 
-            .nameMain {
-                margin: 0;
-                font-family: monospace;
-                font-size: 40px;
-                color: $text-color;
-            }
 
-            .lessDetails {
-                margin: 0;
-                margin-top: 20px;
-                font-family: monospace;
-                font-size: 20px;
-                color: $text-color;
-                text-align: center;
-            }
+.rightColumn {
+
+    .aboutMeSection {
+        margin-top: 20px;
+        text-align: left;
+        width: 100%;
+
+        h3 {
+            color: $primary-color;
+            font-size: 26px;
+            margin-bottom: 10px;
         }
 
-        // About Details Section
-        .aboutDetailsOut {
-            margin-top: 30px;
-            width: 100%;
+        p {
+            font-size: 17px;
+            line-height: 1.6;
+        }
+    }
+
+    .conatactMe {
+        margin-top: 30px;
+
+        h3 {
+            color: $primary-color;
+            font-size: 26px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 17px;
+        }
+
+        .socialIconsContainer {
             display: flex;
 
-            // Triangle Left
-            .triangle-left {
-                width: 0;
-                height: 0;
-                border-top: 21px solid transparent;
-                border-bottom: 21px solid transparent;
-                border-right: 32px solid $primary-color;
+            p {
+                cursor: pointer;
+                text-decoration: underline;
+                margin-top: 20px;
+                margin-right: 20px;
             }
 
-            // About Details Box
-            .aboutDetails {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                background-color: $primary-color;
-                padding: 10px;
-                width: 500px;
+            .socialIcons {
                 cursor: pointer;
+                height: 32px;
+                width: 32px;
+                margin-top: 15px;
+                margin-right: 25px;
 
-                p {
-                    height: 22px;
-                    width: 33%;
-                    margin: 0;
-                    font-size: 21px;
-                    color: #fff;
-                    text-align: center;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: fill;
+                }
 
-                    &:hover {
-                        animation: bounceMain 0.6s infinite alternate;
-                    }
+                .email-icon {
+                    height: 80px;
+                    width: 80px;
                 }
             }
-
-            // Triangle Right
-            .triangle-right {
-                width: 0;
-                height: 0;
-                border-top: 21px solid transparent;
-                border-bottom: 21px solid transparent;
-                border-left: 32px solid $primary-color;
-            }
         }
+
     }
-}
-
-/* Optional Keyframes for Animations */
-@keyframes bounceMain {
-    from {
-        transform: translateY(-5px);
-    }
-
-    to {
-        transform: translateY(5px);
-    }
-}
-
-
-.dynamic-bg-container {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background 0.3s ease, filter 0.3s ease; // Smooth transition
-    background: #0f172a; // Default background color
-}
-
-.content {
-    font-size: 2rem;
-    color: white;
-    text-align: center;
 }

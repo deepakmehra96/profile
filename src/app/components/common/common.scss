@@ -1,0 +1,16 @@
+.dynamic-bg-container {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s ease, filter 0.3s ease; // Smooth transition
+    background: #0f172a; // Default background color
+}
+
+.content {
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+}
