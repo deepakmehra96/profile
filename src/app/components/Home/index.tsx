@@ -1,10 +1,9 @@
 'use client'
 
-import React, { Fragment, useState } from 'react';
+import React, { Fragment } from 'react';
 import Image from 'next/image';
 import me1 from "../../images/myPic.png";
 import "./homeMain.scss"; // Updated to SCSS
-import facebook from "../../images/facebook.svg";
 import twitter from "../../images/twitter.svg";
 import linkedin from "../../images/linkedin.svg";
 import medium from "../../images/medium.svg";
@@ -66,7 +65,7 @@ const HomeMain: React.FC = () => {
                     <div className={'aboutMeSection'}>
                         <h3>About Me</h3>
                         <p>
-                            I’m a skilled developer with a strong focus on progressive enhancement, design systems, and crafting seamless, high-performance user interfaces. Experienced in delivering robust and visually engaging digital solutions, I've successfully built impactful products for clients across diverse regions, driving their business objectives forward. My approach combines a meticulous attention to detail with a deep commitment to user-centered design, ensuring that each project not only meets but exceeds expectations. With proven experience in collaborating across teams and adapting to client needs, I’m dedicated to creating efficient, scalable, and innovative solutions that stand out.
+                            I&apos;m a skilled developer with a strong focus on progressive enhancement, design systems, and crafting seamless, high-performance user interfaces. Experienced in delivering robust and visually engaging digital solutions, I&apos;ve successfully built impactful products for clients across diverse regions, driving their business objectives forward. My approach combines a meticulous attention to detail with a deep commitment to user-centered design, ensuring that each project not only meets but exceeds expectations. With proven experience in collaborating across teams and adapting to client needs, I&apos;m dedicated to creating efficient, scalable, and innovative solutions that stand out.
                         </p>
                     </div>
 
@@ -82,8 +81,8 @@ const HomeMain: React.FC = () => {
                     </div>
 
                     <div className={'conatactMe'}>
-                        <h3>Let's collaborate!</h3>
-                        <p>I'd love to hear about your project. Feel free to drop a message.</p>
+                        <h3>Let&apos;s collaborate!</h3>
+                        <p>I&apos;d love to hear about your project. Feel free to drop a message.</p>
                        <div className='socialIconsContainer'>
                             <div className='socialIcons'
                                 onClick={() => window.open("mailto:deepakmehra149@gmail.com", "_blank")}
