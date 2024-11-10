@@ -44,6 +44,14 @@ body {
     }
 }
 
+.responsiveContainer{
+    display: flex;
+    flex-direction: column;
+    @media (max-width: 768px) {
+        align-items: center;
+    }
+}
+
 .profileImageOut {
     cursor: pointer;
     height: 220px;

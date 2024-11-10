@@ -16,13 +16,15 @@ const HomeMain: React.FC = () => {
         <Fragment>
             <div className={'container'}>
                 <div className={'leftColumn'}>
-                    <div className={'profileImageOut'}>
-                        <Image alt="Profile" src={me1} />
-                    </div>
+                    <div className='responsiveContainer'>
+                        <div className={'profileImageOut'}>
+                            <Image alt="Profile" src={me1} />
+                        </div>
 
-                    <div className={'profileInfo'}>
-                        <p className={'nameMain'}>Deepak Mehra</p>
-                        <p className={'profileTitle'}>Full Stack Developer</p>
+                        <div className={'profileInfo'}>
+                            <p className={'nameMain'}>Deepak Mehra</p>
+                            <p className={'profileTitle'}>Full Stack Developer</p>
+                        </div>
                     </div>
                     <div className='skillContainer'>
                         <div className='skills__skill'>JavaScript</div>
@@ -45,7 +47,7 @@ const HomeMain: React.FC = () => {
                         <div className="socialIconsOut">
                             <div className="socialIcons">
                                 <div 
-                                    onClick={() => window.open("https://twitter.com/imabhi96/", "_blank")}
+                                    onClick={() => window.open("https://x.com/imabhi96/", "_blank")}
                                 >
                                     <Image alt="twitter" src={twitter} />
                                 </div>
