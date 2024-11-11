@@ -79,21 +79,22 @@ body {
     .profileTitle {
         font-size: 30px;
         color: $primary-color;
-        margin-top: 20px;
+        margin-top: 15px;
     }
 
     @media (max-width: 768px) {
         text-align: center;
+        margin-top: 10px;
     }
 }
 
 .skillContainer {
-    margin-top: 20px;
+    margin-top: 25px;
     display: flex;
     flex-wrap: wrap;
 
     @media (max-width: 768px) {
-        margin-top: 40px;
+        margin-top: 30px;
     }
 
     .skills__skill {
