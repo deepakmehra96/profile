@@ -81,12 +81,20 @@ body {
         color: $primary-color;
         margin-top: 20px;
     }
+
+    @media (max-width: 768px) {
+        text-align: center;
+    }
 }
 
 .skillContainer {
     margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
+
+    @media (max-width: 768px) {
+        margin-top: 40px;
+    }
 
     .skills__skill {
         padding: 10px 20px;
