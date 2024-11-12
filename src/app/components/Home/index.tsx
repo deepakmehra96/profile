@@ -63,21 +63,8 @@ const HomeMain: React.FC = () => {
                         <div className="socialIconsOut">
                             <div className="socialIcons">
                                 <div 
-                                      onClick={() => {
-                                        const twitterUrl = "https://x.com/imabhi96/";
-                                        const androidIntentUrl = "intent://x.com/imabhi96/#Intent;package=com.twitter.android;scheme=https;end";
-                                        const iosAppUrl = "twitter://user?screen_name=imabhi96";
-                                    
-                                        if (/Android/i.test(navigator.userAgent)) {
-                                          window.location.href = androidIntentUrl;
-                                        } else if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-                                          window.location.href = iosAppUrl;
-                                          setTimeout(() => {
-                                            window.open(twitterUrl, "_blank");
-                                          }, 1000);
-                                        } else {
-                                          window.open(twitterUrl, "_blank");
-                                        }
+                                     onClick={() => {
+                                        window.open('https://twitter.com/imabhi96');
                                       }}
                                 >
                                     <Image alt="twitter" src={twitter} />
