@@ -1,0 +1,119 @@
+$background-color: #0f172a;
+$primary-color: #3EB489;
+
+.overlay {
+  position: fixed;
+  z-index: 999999999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  overflow: hidden;
+}
+
+.modal {
+  background: rgba(15, 23, 42, 0.85);
+  padding: 20px 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 1000px;
+  max-height: 80vh;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  color: #fff;
+  text-align: center;
+  position: relative;
+  overflow-y: hidden;
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 32px;
+  color: #ffffffcc;
+  cursor: pointer;
+
+  &:hover {
+    color: #ffffff;
+  }
+}
+
+.modal-title {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.projects-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: 500px;  // Limit height for scrollable content
+  overflow-y: auto;
+  z-index: 9999999999;
+  padding-bottom: 40px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.project-card {
+  background: rgba(30, 41, 59, 0.8);
+  padding: 24px 18px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: left;
+
+  .titleProject{
+    cursor: pointer;
+    display: flex;
+    width: fit-content;
+    h3 {
+      text-decoration: underline;
+      font-size: 20px;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .visitIcon{
+      cursor: pointer;
+      margin-left: 5px;
+      margin-top: 3px;
+      height: 20px;
+      width: 20px;
+
+      img {
+          width: 100%;
+          height: 100%;
+          object-fit: fill;
+      }
+    }
+  }
+
+  a {
+    color: #3EB489;
+    text-decoration: none;
+    font-size: 16px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  p {
+    color: #cbd5e1;
+    font-size: 146x;
+    margin-top: 8px;
+  }
+
+  &:hover {
+    transform: translateX(4px);
+  }
+}

@@ -1,6 +1,6 @@
 'use client'
 
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import Image from 'next/image';
 import me1 from "../../images/myPic.png";
 import "./homeMain.scss"; // Updated to SCSS
@@ -9,9 +9,25 @@ import linkedin from "../../images/linkedin.svg";
 import medium from "../../images/medium.svg";
 import instagram from "../../images/instagram.svg";
 import email from "../../images/email.svg";
+import projectsSvg from "../../images/projects.svg";
+import Projects from '../Projects';
 
 
 const HomeMain: React.FC = () => {
+    const [openModal, setOpenModal] = useState<boolean>(false)
+
+    useEffect(() => {
+        if (openModal) {
+          document.body.style.overflowY = 'hidden';
+        } else {
+          document.body.style.overflowY = 'auto';
+        }
+    
+        return () => {
+          document.body.style.overflowY = 'auto';
+        };
+      }, [openModal]);
+
     return (
         <Fragment>
             <div className={'container'}>
@@ -80,12 +96,24 @@ const HomeMain: React.FC = () => {
 
                 <div className={'rightColumn'}>
                     <div className={'aboutMeSection'}>
-                        <h3>About Me</h3>
                         <p>
-                            I&apos;m a skilled developer with a strong focus on progressive enhancement, design systems, and crafting seamless, high-performance user interfaces. Experienced in delivering robust and visually engaging digital solutions, I&apos;ve successfully built impactful products for clients across diverse regions, driving their business objectives forward. My approach combines a meticulous attention to detail with a deep commitment to user-centered design, ensuring that each project not only meets but exceeds expectations. With proven experience in collaborating across teams and adapting to client needs, I&apos;m dedicated to creating efficient, scalable, and innovative solutions that stand out.
+                            I&apos;m a skilled developer with a strong focus on progressive enhancement, design systems, and crafting seamless, high-performance user interfaces. Experienced in delivering robust and visually engaging digital solutions, I&apos;ve successfully built impactful products for clients across diverse regions, driving their business objectives forward. My approach combines a meticulous attention to detail with a deep commitment to user-centered design, ensuring that each project not only meets but exceeds expectations. With proven experience in collaborating across teams and adapting to client needs.
                         </p>
                     </div>
 
+                    <div className={'conatactMe'}>
+                        <h3>My Work</h3>
+                        <p>
+                            Here&apos;s a showcase of my work, highlighting impactful solutions and innovative projects.
+                        </p>
+                        <div className='socialIconsContainer'>
+                            <div className='socialIconsProject'
+                                onClick={() => setOpenModal(!openModal)}
+                            >
+                                <Image alt="project" src={projectsSvg} />
+                            </div>
+                        </div>
+                    </div>
                
                     <div className={'conatactMe'}>
                         <h3>Check out my blogs</h3>
@@ -115,6 +143,8 @@ const HomeMain: React.FC = () => {
                     </div>
                 </div>
             </div>
+
+            <Projects openModal={openModal} setOpenModal={setOpenModal} />
         </Fragment>
     );
 };
