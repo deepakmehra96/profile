@@ -9,7 +9,7 @@ body {
     margin: 0;
     padding: 40px 0;
     font-family: $font-family-main;
-    background-color: $background-color;
+    background: $background-color;
     color: $text-color;
     overflow-y: auto;
     height: 100vh;
@@ -201,7 +201,7 @@ body {
                 cursor: pointer;
                 height: 30px;
                 width: 30px;
-                margin-top: 15px;
+                margin-top: 10px;
                 margin-right: 25px;
 
                 img {
@@ -212,9 +212,9 @@ body {
             }
             .socialIconsProject {
                 cursor: pointer;
-                height: 40px;
-                width: 40px;
-                margin-top: 15px;
+                height: 39px;
+                width: 39px;
+                margin-top: 10px;
                 margin-right: 25px;
                 margin-left: -2px;
 

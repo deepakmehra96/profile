@@ -83,8 +83,9 @@ const HomeMain: React.FC = () => {
 
                 <div className={'rightColumn'}>
                     <div className={'aboutMeSection'}>
+                        <h3>About Me</h3>
                         <p>
-                            I&apos;m a skilled developer with a strong focus on progressive enhancement, design systems, and crafting seamless, high-performance user interfaces. Experienced in delivering robust and visually engaging digital solutions, I&apos;ve successfully built impactful products for clients across diverse regions, driving their business objectives forward. My approach combines a meticulous attention to detail with a deep commitment to user-centered design, ensuring that each project not only meets but exceeds expectations. With proven experience in collaborating across teams and adapting to client needs.
+                            I&apos;m a developer focused on building high-quality, user-friendly interfaces that work smoothly and look great. I&apos;ve helped clients from different regions create digital products that make a real impact and support their business goals. I pay close attention to detail and always prioritize the user experience, making sure each project goes beyond what&apos;s expected. I&apos;m skilled at working with teams and adjusting to client needs to deliver the best results. I&apos;ve had the opportunity to contribute to million-dollar brands, bringing their vision to life and driving growth through effective digital solutions.
                         </p>
                     </div>
 
