@@ -39,7 +39,7 @@ const HomeMain: React.FC = () => {
 
                         <div className={'profileInfo'}>
                             <p className={'nameMain'}>Deepak Mehra</p>
-                            <p className={'profileTitle'}>Full Stack Developer</p>
+                            <p className={'profileTitle'}>Software Developer</p>
                         </div>
                     </div>
                     <div className='skillContainer'>
