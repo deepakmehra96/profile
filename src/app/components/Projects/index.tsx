@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import visit from "../../images/visit.svg";
 import "./projects.scss";
 import Image from 'next/image';
