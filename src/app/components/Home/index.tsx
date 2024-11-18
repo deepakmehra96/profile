@@ -54,7 +54,7 @@ const HomeMain: React.FC = () => {
                         <div className='skills__skill'>MongoDB</div>
                         <div className='skills__skill'>SEO</div>
                         <div className='skills__skill'>Chat App</div>
-                        <div className='skills__skill'>Perfromance</div>
+                        <div className='skills__skill'>Performance</div>
                         <div className='skills__skill'>Plasmo JS</div>
                         <div className='skills__skill'>Responsive Design</div>
                     </div>
