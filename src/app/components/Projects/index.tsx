@@ -12,6 +12,11 @@ const projectsArray = [
         description: "MD Exam is an online platform that helps people with their weight loss journey. It connects them with doctors and health experts to guide them in living healthier lives through telemedicine and personalized plans."
     },
     {
+        title: "Myntra Studio",
+        link: "https://www.myntra.com/studio/home",
+        description: "Myntra Studio is a dedicated page on Myntra where influencer posts are showcased for marketing purposes. As a third-party freelancer, I contributed to the project by designing its user interface."
+    },
+    {
         title: "Emed4u",
         link: "https://emed4u.com/",
         description: "Emed4u is an online healthcare management system that allows patients to consult doctors, book appointments, and manage their health records from the comfort of their homes."

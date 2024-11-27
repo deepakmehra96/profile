@@ -49,12 +49,12 @@ const HomeMain: React.FC = () => {
                         <div className='skills__skill'>Next JS</div>
                         <div className='skills__skill'>Node JS</div>
                         <div className='skills__skill'>Firebase</div>
+                        <div className='skills__skill'>Prompt Engineering</div>
+                        <div className='skills__skill'>SEO</div>
                         <div className='skills__skill'>AWS</div>
                         <div className='skills__skill'>HTML/CSS</div>
                         <div className='skills__skill'>MongoDB</div>
-                        <div className='skills__skill'>SEO</div>
                         <div className='skills__skill'>Chat App</div>
-                        <div className='skills__skill'>Performance</div>
                         <div className='skills__skill'>Plasmo JS</div>
                         <div className='skills__skill'>Responsive Design</div>
                     </div>
