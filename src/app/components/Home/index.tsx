@@ -26,11 +26,26 @@ const HomeMain: React.FC = () => {
         return () => {
           document.body.style.overflowY = 'auto';
         };
-      }, [openModal]);
+    }, [openModal]);
 
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+        if(window.innerWidth < 1080) return
+
+        const { clientX, clientY } = e;
+        console.log(clientX, clientY);
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        const spreadX = (clientX / width) * 100;
+        const spreadY = (clientY / height) * 100;
+        console.log(spreadX, spreadY);
+     
+        document.body.style.background = `radial-gradient(circle at ${spreadX}% ${spreadY}%, #4f7be2ee -100%, #0f172a 20%)`;
+        document.body.style.transition = 'background 0.5s ease';
+    };
+    
     return (
         <Fragment>
-            <div className={'container'}>
+            <div className={'container'} onMouseMove={handleMouseMove}>
                 <div className={'leftColumn'}>
                     <div className='responsiveContainer'>
                         <div className={'profileImageOut'}>
