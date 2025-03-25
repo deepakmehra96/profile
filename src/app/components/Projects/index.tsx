@@ -19,7 +19,7 @@ const projectsArray = [
     {
         title: "Google Gemini AI (prompt engineer)",
         link: "https://gemini.google.com/",
-        description: " I worked as a third-party freelancer with Turing, contributing to the Google Gemini AI project. My role involved designing, testing, and optimizing AI prompts to improve the model's accuracy and relevance in generating responses. "
+        description: "I worked as a freelancer with Turing, contributing to the Google Gemini AI project. My role involved designing, testing, and optimizing AI prompts to improve the model's accuracy and relevance in generating responses. "
     },
     {
         title: "Emed4u",
