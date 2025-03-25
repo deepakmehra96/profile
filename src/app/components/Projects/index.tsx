@@ -17,6 +17,11 @@ const projectsArray = [
         description: "Myntra Studio is a dedicated page on Myntra where influencer posts are showcased for marketing purposes. As a third-party freelancer, I contributed to the project by designing its user interface."
     },
     {
+        title: "Google Gemini AI (prompt engineer)",
+        link: "https://gemini.google.com/",
+        description: " I worked as a third-party freelancer with Turing, contributing to the Google Gemini AI project. My role involved designing, testing, and optimizing AI prompts to improve the model's accuracy and relevance in generating responses. "
+    },
+    {
         title: "Emed4u",
         link: "https://emed4u.com/",
         description: "Emed4u is an online healthcare management system that allows patients to consult doctors, book appointments, and manage their health records from the comfort of their homes."
