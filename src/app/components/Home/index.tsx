@@ -11,6 +11,7 @@ import instagram from "../../images/instagram.svg";
 import email from "../../images/email.svg";
 import projectsSvg from "../../images/projects.svg";
 import Projects from '../Projects';
+import { FaYoutube } from "react-icons/fa";
 
 
 const HomeMain: React.FC = () => {
@@ -39,7 +40,7 @@ const HomeMain: React.FC = () => {
         const spreadY = (clientY / height) * 100;
         console.log(spreadX, spreadY);
      
-        document.body.style.background = `radial-gradient(circle at ${spreadX}% ${spreadY}%, #4f7be2ee -100%, #0f172a 20%)`;
+        document.body.style.background = `radial-gradient(circle at ${spreadX}% ${spreadY}%, #4f7be2ee -100%, #0f172a 10%)`;
         document.body.style.transition = 'background 0.5s ease';
     };
     
@@ -93,6 +94,19 @@ const HomeMain: React.FC = () => {
                                         <Image alt="instagram" src={instagram} />
                                     </div>
                                 </div>
+                                <div className="socialIcons">
+                                    <div 
+                                        style={{
+                                            fontSize: "2.5rem",
+                                            marginTop: "-0.1rem",
+                                            cursor: "pointer",
+                                            color: "#fff",
+                                        }}
+                                        onClick={() => window.open("https://www.youtube.com/@BuildWithDeep", "_blank")}
+                                    >
+                                        <FaYoutube />
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -120,21 +134,33 @@ const HomeMain: React.FC = () => {
                         </div>
                 
                         <div className={'conatactMe'}>
-                            <h3>Check out my blogs</h3>
-                            <p>I write about tech, programming, and more. Feel free to explore my thoughts!</p>
+                            <h3>Check out my blogs and videos</h3>
+                            <p>I talk about tech, programming, and more. Feel free to explore my thoughts and learn something new!</p>
                             <div className='socialIconsContainer'>
                                 <div className="socialIcons" onClick={() => window.open("https://medium.com/@deepakmehra149", "_blank")}>
                                     <Image alt="medium" src={medium} />
+                                </div>
+                                <div
+                                    style={{
+                                        fontSize: "2.5rem",
+                                        marginTop: "0.4rem",
+                                        cursor: "pointer",
+                                        color: "#fff",
+                                    }}
+                                    onClick={() => window.open("https://www.youtube.com/@BuildWithDeep", "_blank")}
+                                >
+                                    <FaYoutube />
                                 </div>
                             </div>
                         </div>
 
                         <div className={'conatactMe'}>
                             <h3>Let&apos;s collaborate!</h3>
-                            <p>I&apos;d love to hear about your project. Feel free to drop a message.</p>
+                            <p>I&apos;d love to hear about your project. Feel free to drop a message at <u>deepakmehra149@gmail.com</u>.</p>
                         <div className='socialIconsContainer'>
                                 <div className='socialIcons'
                                     onClick={() => window.open("mailto:deepakmehra149@gmail.com", "_blank")}
+                                    title="Email me"
                                 >
                                     <Image alt="email" src={email} />
                                 </div>

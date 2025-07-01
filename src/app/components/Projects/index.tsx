@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import visit from "../../images/visit.svg";
 import "./projects.scss";
 import Image from 'next/image';
@@ -49,6 +49,31 @@ interface ModalProps {
 }
 
 const ModalComponent = ({ openModal, setOpenModal }: ModalProps) => {
+    useEffect(() => {
+        const handleEscapeKey = (event: KeyboardEvent) => {
+            if (event.key === 'Escape') {
+                setOpenModal(false);
+            }
+        };
+
+        const handleClickOutside = (event: MouseEvent) => {
+            const target = event.target as HTMLElement;
+            if (target.classList.contains('overlay')) {
+                setOpenModal(false);
+            }
+        };
+
+        if (openModal) {
+            document.addEventListener('keydown', handleEscapeKey);
+            document.addEventListener('click', handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener('keydown', handleEscapeKey);
+            document.removeEventListener('click', handleClickOutside);
+        };
+    }, [openModal, setOpenModal]);
+
     if (!openModal) return null;
 
     return (
