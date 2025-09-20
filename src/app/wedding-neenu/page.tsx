@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 
 const WeddingNeenu: React.FC = () => {
@@ -17,6 +17,53 @@ const WeddingNeenu: React.FC = () => {
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
                 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet" />
+                <style>{`
+                    html, body {
+                        overflow-y: auto !important;
+                        overflow-x: hidden !important;
+                        height: auto !important;
+                        -webkit-overflow-scrolling: touch;
+                    }
+                    
+                    /* Ensure mobile scrolling works properly */
+                    @media (max-width: 768px) {
+                        html, body {
+                            overflow: auto !important;
+                            height: 100% !important;
+                            position: relative !important;
+                        }
+                        
+                        .wedding-container {
+                            flex-direction: column !important;
+                        }
+                        
+                        .md-half-width {
+                            width: 100% !important;
+                            padding: 2rem !important;
+                        }
+                        
+                        /* Mobile-specific iframe sizing */
+                        iframe {
+                            width: 100% !important;
+                            height: 250px !important;
+                            min-height: 200px !important;
+                        }
+                        
+                        /* Adjust modal for mobile */
+                        .mobile-modal {
+                            max-width: 90vw !important;
+                            max-height: 80vh !important;
+                            margin: 1rem !important;
+                        }
+                    }
+                    
+                    /* Desktop responsive styles */
+                    @media (min-width: 769px) {
+                        .md-half-width {
+                            width: 50% !important;
+                        }
+                    }
+                `}</style>
             </Head>
             
             <div style={{
@@ -26,7 +73,9 @@ const WeddingNeenu: React.FC = () => {
                 alignItems: 'center',
                 justifyContent: 'center',
                 minHeight: '100vh',
-                padding: '1rem'
+                padding: '1rem',
+                overflowY: 'auto',
+                WebkitOverflowScrolling: 'touch'
             }}>
                 {/* Main Card Container */}
                 <div style={{
@@ -36,9 +85,13 @@ const WeddingNeenu: React.FC = () => {
                     backgroundColor: 'white',
                     boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
                     borderRadius: '0.5rem',
-                    overflow: 'hidden'
+                    overflow: 'visible'
                 }}>
-                    <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+                    <div className="wedding-container" style={{ 
+                        display: 'flex', 
+                        flexDirection: 'row', 
+                        flexWrap: 'wrap'
+                    }}>
                         {/* Left Side: Features the couple's names and the main invitation */}
                         <div style={{
                             width: '100%',
@@ -290,7 +343,7 @@ const WeddingNeenu: React.FC = () => {
                             }}
                             onClick={closeModal}
                         />
-                        <div style={{
+                        <div className="mobile-modal" style={{
                             backgroundColor: 'white',
                             borderRadius: '0.5rem',
                             boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
@@ -311,11 +364,12 @@ const WeddingNeenu: React.FC = () => {
                             }}>
                                 Wedding Location
                             </h2>
-                            <div style={{
-                                color: '#374151',
-                                maxHeight: '60vh',
-                                overflowY: 'auto'
-                            }}>
+                             <div style={{
+                                 color: '#374151',
+                                 maxHeight: '50vh',
+                                 overflowY: 'auto',
+                                 WebkitOverflowScrolling: 'touch'
+                             }}>
 
                             <div style={{
                                 width: '100%',
