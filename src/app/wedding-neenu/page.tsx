@@ -5,49 +5,6 @@ import Head from 'next/head';
 
 const WeddingNeenu: React.FC = () => {
     const [showModal, setShowModal] = useState(false);
-    const [blessingsContent, setBlessingsContent] = useState('');
-    const [isLoading, setIsLoading] = useState(false);
-
-    const fetchBlessings = async () => {
-        setShowModal(true);
-        setIsLoading(true);
-        setBlessingsContent('');
-
-        const userQuery = "Write a few short, heartfelt wedding blessing messages for a couple, Neenu and Deepak. Keep them concise and elegant, suitable for a wedding card. Generate 3-4 distinct options.";
-        const apiKey = ""; // API key will be automatically provided by the environment
-        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
-
-        try {
-            const payload = {
-                contents: [{ parts: [{ text: userQuery }] }],
-            };
-
-            const response = await fetch(apiUrl, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
-            });
-
-            if (!response.ok) {
-                throw new Error(`API call failed with status: ${response.status}`);
-            }
-
-            const result = await response.json();
-            const candidate = result.candidates?.[0];
-
-            let generatedText = "Sorry, we couldn't generate blessings at this moment. Please try again later.";
-            if (candidate && candidate.content?.parts?.[0]?.text) {
-                generatedText = candidate.content.parts[0].text;
-            }
-            
-            setBlessingsContent(generatedText);
-        } catch (error) {
-            console.error('Error fetching blessings:', error);
-            setBlessingsContent("Could not fetch blessings. Please check the console for more details.");
-        } finally {
-            setIsLoading(false);
-        }
-    };
 
     const closeModal = () => {
         setShowModal(false);
@@ -289,7 +246,7 @@ const WeddingNeenu: React.FC = () => {
                             
                             {/* Gemini API Feature Button */}
                             <button 
-                                onClick={fetchBlessings}
+                                onClick={() => setShowModal(true)}
                                 style={{
                                     width: '100%',
                                     backgroundColor: '#9A7B4F',
@@ -308,7 +265,7 @@ const WeddingNeenu: React.FC = () => {
                                 onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#8a6d46'}
                                 onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#9A7B4F'}
                             >
-                                ✨ Suggest Blessings
+                                ✨ Go to Wedding Location
                             </button>
                         </div>
                     </div>
@@ -352,44 +309,46 @@ const WeddingNeenu: React.FC = () => {
                                 color: '#9A7B4F',
                                 fontFamily: "'Great Vibes', cursive"
                             }}>
-                                Wedding Blessings
+                                Wedding Location
                             </h2>
                             <div style={{
                                 color: '#374151',
                                 maxHeight: '60vh',
                                 overflowY: 'auto'
                             }}>
-                                {isLoading ? (
-                                    <div style={{
-                                        display: 'flex',
-                                        justifyContent: 'center',
-                                        alignItems: 'center',
-                                        padding: '2.5rem 0'
-                                    }}>
-                                        <div style={{
-                                            width: '3rem',
-                                            height: '3rem',
-                                            border: '4px solid #D4C1A8',
-                                            borderTop: '4px solid transparent',
-                                            borderRadius: '50%',
-                                            animation: 'spin 1s linear infinite'
-                                        }} />
-                                    </div>
-                                ) : (
-                                    <div style={{ whiteSpace: 'pre-wrap' }}>
-                                        {blessingsContent.split('\n').filter(line => line.trim() !== '').map((line, index) => (
-                                            <p key={index} style={{
-                                                padding: '1rem',
-                                                backgroundColor: '#F9FAFB',
-                                                borderRadius: '0.5rem',
-                                                borderLeft: '4px solid #D4C1A8',
-                                                marginBottom: '1rem'
-                                            }}>
-                                                {line.replace(/^\d+\.\s*/, '')}
-                                            </p>
-                                        ))}
-                                    </div>
-                                )}
+
+                            <div style={{
+                                width: '100%',
+                                backgroundColor: '#9A7B4F',
+                                color: 'white',
+                                padding: '0.75rem 1rem',
+                                borderRadius: '0.5rem',
+                                border: 'none',
+                                fontWeight: '600',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                cursor: 'pointer',
+                                transition: 'background-color 0.3s',
+                                fontFamily: 'inherit',
+                                marginBottom: '3rem'
+                            }}
+                            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#8a6d46'}
+                            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#9A7B4F'}
+                            onClick={() => window.open("https://maps.app.goo.gl/uxvTZ5S6314qRRyZ9", "_blank")}
+                            >
+                                Open in google maps
+                            </div>
+
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3098.9237928073953!2d75.625248!3d31.948601900000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391b9ed248b9f76f%3A0x9484dade3197b6e0!2sVishal%20Farm%20-%20Best%20Banquet%20Hall%20in%20Mukerian!5e1!3m2!1sen!2sin!4v1758357737634!5m2!1sen!2sin" 
+                                width="100%" 
+                                height="280" 
+                                style={{border: 0}} 
+                                allowFullScreen={true} 
+                                loading="lazy" 
+                                referrerPolicy="no-referrer-when-downgrade"
+                            />
                             </div>
                             <button 
                                 onClick={closeModal}
