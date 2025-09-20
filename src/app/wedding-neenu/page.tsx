@@ -5,10 +5,63 @@ import Head from 'next/head';
 
 const WeddingNeenu: React.FC = () => {
     const [showModal, setShowModal] = useState(false);
+    const [currentLanguage, setCurrentLanguage] = useState<'english' | 'hindi'>('english');
+
+    const translations = {
+        english: {
+            joinUs: "Join us for the wedding celebration of",
+            date: "on Sunday, 02 November 2025",
+            parentsOfBride: "Parents of the Bride",
+            parentsOfGroom: "Parents of the Groom",
+            brideParnets: "Smt. Gurmeet kaur & Sh. Ram Kishan",
+            groomParents: "Smt. Vandana Rani & Sh. Naresh Mehra",
+            arrival: "Arrival",
+            lunch: "Lunch",
+            venue: "Venue",
+            venueName: "Vishal farm",
+            venueAddress: "talwara road, Mukerian",
+            rsvp: "RSVP",
+            rsvpFamily: "Vadhopal Family",
+            locationButton: "✨ Go to Wedding Location",
+            modalTitle: "Wedding Location",
+            mapsButton: "Open in google maps",
+            languageToggle: "हिंदी में देखें",
+            bride: "Neenu",
+            groom: "Deepak"
+        },
+        hindi: {
+            joinUs: "शादी समारोह में शामिल होने का सौभाग्य प्राप्त करें",
+            date: "रविवार, 02 नवंबर 2025 को",
+            parentsOfBride: "वधू के माता-पिता",
+            parentsOfGroom: "वर के माता-पिता",
+            brideParnets: "श्रीमती गुरमीत कौर एवं श्री राम किशन",
+            groomParents: "श्रीमती वंदना रानी एवं श्री नरेश मेहरा",
+            arrival: "आगमन",
+            lunch: "भोजन",
+            venue: "स्थान",
+            venueName: "विशाल फार्म",
+            venueAddress: "तलवाड़ा रोड, मुकेरियां",
+            rsvp: "उपस्थिति सूचना",
+            rsvpFamily: "वढोपाल परिवार",
+            locationButton: "✨ शादी का स्थान देखें",
+            modalTitle: "शादी का स्थान",
+            mapsButton: "गूगल मैप में खोलें",
+            languageToggle: "View in English",
+            bride: "नीनू",
+            groom: "दीपक"
+        }
+    };
 
     const closeModal = () => {
         setShowModal(false);
     };
+
+    const toggleLanguage = () => {
+        setCurrentLanguage(prev => prev === 'english' ? 'hindi' : 'english');
+    };
+
+    const t = translations[currentLanguage];
+
 
     return (
         <>
@@ -106,7 +159,7 @@ const WeddingNeenu: React.FC = () => {
                                 fontSize: '1.125rem',
                                 color: '#4B5563'
                             }}>
-                                Join us for the wedding celebration of
+                                {t.joinUs}
                             </p>
                             
                             <h1 style={{
@@ -115,7 +168,7 @@ const WeddingNeenu: React.FC = () => {
                                 margin: '1.5rem 0',
                                 color: '#9A7B4F'
                             }}>
-                                Neenu
+                                {t.bride}
                             </h1>
                             <p style={{
                                 fontSize: '2.25rem',
@@ -129,7 +182,7 @@ const WeddingNeenu: React.FC = () => {
                                 margin: '1.5rem 0',
                                 color: '#9A7B4F'
                             }}>
-                                Deepak
+                                {t.groom}
                             </h1>
                             
                             <div style={{
@@ -144,7 +197,7 @@ const WeddingNeenu: React.FC = () => {
                                 fontWeight: '600',
                                 color: '#374151'
                             }}>
-                                on Sunday, 02 November 2025
+                                {t.date}
                             </p>
                         </div>
 
@@ -165,14 +218,14 @@ const WeddingNeenu: React.FC = () => {
                                     color: '#6B7280',
                                     marginBottom: '0.5rem'
                                 }}>
-                                    Parents of the Bride
+                                    {t.parentsOfBride}
                                 </p>
                                 <p style={{
                                     fontSize: '1.25rem',
                                     fontWeight: '600',
                                     color: '#1F2937'
                                 }}>
-                                    Smt. Gurmeet kaur & Sh. Ram Kishan
+                                    {t.brideParnets}
                                 </p>
                             </div>
 
@@ -184,14 +237,14 @@ const WeddingNeenu: React.FC = () => {
                                     color: '#6B7280',
                                     marginBottom: '0.5rem'
                                 }}>
-                                    Parents of the Groom
+                                    {t.parentsOfGroom}
                                 </p>
                                 <p style={{
                                     fontSize: '1.25rem',
                                     fontWeight: '600',
                                     color: '#1F2937'
                                 }}>
-                                    Smt. Vandana Rani & Sh. Naresh Mehra
+                                    {t.groomParents}
                                 </p>
                             </div>
 
@@ -216,7 +269,7 @@ const WeddingNeenu: React.FC = () => {
                                         color: '#6B7280',
                                         marginBottom: '0.25rem'
                                     }}>
-                                        Arrival
+                                        {t.arrival}
                                     </p>
                                     <p style={{
                                         fontSize: '1.25rem',
@@ -234,7 +287,7 @@ const WeddingNeenu: React.FC = () => {
                                         color: '#6B7280',
                                         marginBottom: '0.25rem'
                                     }}>
-                                        Lunch
+                                        {t.lunch}
                                     </p>
                                     <p style={{
                                         fontSize: '1.25rem',
@@ -254,20 +307,20 @@ const WeddingNeenu: React.FC = () => {
                                     color: '#6B7280',
                                     marginBottom: '0.25rem'
                                 }}>
-                                    Venue
+                                    {t.venue}
                                 </p>
                                 <p style={{
                                     fontSize: '1.25rem',
                                     fontWeight: '600',
                                     color: '#1F2937'
                                 }}>
-                                    Vishal farm
+                                    {t.venueName}
                                 </p>
                                 <p style={{
                                     fontSize: '1.125rem',
                                     color: '#4B5563'
                                 }}>
-                                    talwara road, Mukerian
+                                    {t.venueAddress}
                                 </p>
                             </div>
                             
@@ -285,7 +338,7 @@ const WeddingNeenu: React.FC = () => {
                                     fontSize: '1rem',
                                     color: '#6B7280'
                                 }}>
-                                    RSVP
+                                    {t.rsvp}
                                 </p>
                                 <p style={{
                                     fontSize: '1.25rem',
@@ -293,7 +346,7 @@ const WeddingNeenu: React.FC = () => {
                                     color: '#1F2937',
                                     marginTop: '0.25rem'
                                 }}>
-                                    Vadhopal Family
+                                    {t.rsvpFamily}
                                 </p>
                             </div>
                             
@@ -313,12 +366,37 @@ const WeddingNeenu: React.FC = () => {
                                     justifyContent: 'center',
                                     cursor: 'pointer',
                                     transition: 'background-color 0.3s',
+                                    fontFamily: 'inherit',
+                                    marginBottom: '0.75rem'
+                                }}
+                                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#8a6d46'}
+                                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#9A7B4F'}
+                            >
+                                {t.locationButton}
+                            </button>
+
+                            {/* Language Toggle Button */}
+                            <button 
+                                onClick={toggleLanguage}
+                                style={{
+                                    width: '100%',
+                                    backgroundColor: '#9A7B4F',
+                                    color: 'white',
+                                    padding: '0.75rem 1rem',
+                                    borderRadius: '0.5rem',
+                                    border: 'none',
+                                    fontWeight: '600',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    cursor: 'pointer',
+                                    transition: 'background-color 0.3s',
                                     fontFamily: 'inherit'
                                 }}
                                 onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#8a6d46'}
                                 onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#9A7B4F'}
                             >
-                                ✨ Go to Wedding Location
+                                {t.languageToggle}
                             </button>
                         </div>
                     </div>
@@ -362,7 +440,7 @@ const WeddingNeenu: React.FC = () => {
                                 color: '#9A7B4F',
                                 fontFamily: "'Great Vibes', cursive"
                             }}>
-                                Wedding Location
+                                {t.modalTitle}
                             </h2>
                              <div style={{
                                  color: '#374151',
@@ -391,7 +469,7 @@ const WeddingNeenu: React.FC = () => {
                             onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#9A7B4F'}
                             onClick={() => window.open("https://maps.app.goo.gl/uxvTZ5S6314qRRyZ9", "_blank")}
                             >
-                                Open in google maps
+                                {t.mapsButton}
                             </div>
 
                             <iframe 
