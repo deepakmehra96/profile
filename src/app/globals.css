@@ -13,8 +13,14 @@
 html,
 body {
   max-width: 100vw;
-  overflow: scroll;
+  /* overflow: hidden; */
   /* overflow-y: auto !important; */
+}
+
+@media (max-width: 768px) {
+  html, body {
+    overflow: auto !important;
+  }
 }
 
 body {
