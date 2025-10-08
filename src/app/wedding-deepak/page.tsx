@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Head from 'next/head';
 
 const WeddingNeenu: React.FC = () => {
-    const [showModal, setShowModal] = useState(false);
+    const [showModal, setShowModal] = useState('');
     const [currentLanguage, setCurrentLanguage] = useState<'english' | 'hindi'>('english');
 
     const translations = {
@@ -22,8 +22,10 @@ const WeddingNeenu: React.FC = () => {
             venueAddress: "talwara road, Mukerian",
             rsvp: "RSVP",
             rsvpFamily: "Mehra Family",
-            locationButton: "✨ Go to Wedding Location",
+            locationButton: "Go to Wedding Location",
+            homeButton: "Go to Home Location",
             modalTitle: "Wedding Location",
+            homeModalTitle: "Home Location",
             mapsButton: "Open in google maps",
             languageToggle: "हिंदी में देखें",
             bride: "Neenu",
@@ -43,8 +45,10 @@ const WeddingNeenu: React.FC = () => {
             venueAddress: "तलवाड़ा रोड, मुकेरियां",
             rsvp: "उपस्थिति सूचना",
             rsvpFamily: "मेहरा परिवार",
-            locationButton: "✨ शादी का स्थान देखें",
+            locationButton: "शादी का स्थान देखें",
+            homeButton: "घर का स्थान देखें",
             modalTitle: "शादी का स्थान",
+            homeModalTitle: "घर का स्थान",
             mapsButton: "गूगल मैप में खोलें",
             languageToggle: "View in English",
             bride: "नीनू",
@@ -53,7 +57,7 @@ const WeddingNeenu: React.FC = () => {
     };
 
     const closeModal = () => {
-        setShowModal(false);
+        setShowModal('');
     };
 
     const toggleLanguage = () => {
@@ -303,7 +307,7 @@ const WeddingNeenu: React.FC = () => {
                                 </div>
                             </div>
 
-                            <div>
+                            <div style={{ marginTop: '1rem' }}>
                                 <p style={{
                                     letterSpacing: '0.1em',
                                     textTransform: 'uppercase',
@@ -356,7 +360,7 @@ const WeddingNeenu: React.FC = () => {
                             
                             {/* Gemini API Feature Button */}
                             <button 
-                                onClick={() => setShowModal(true)}
+                                onClick={() => setShowModal('wedding')}
                                 style={{
                                     width: '100%',
                                     backgroundColor: '#9A7B4F',
@@ -377,6 +381,30 @@ const WeddingNeenu: React.FC = () => {
                                 onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#9A7B4F'}
                             >
                                 {t.locationButton}
+                            </button>
+
+                            <button 
+                                onClick={() => setShowModal('home')}
+                                style={{
+                                    width: '100%',
+                                    backgroundColor: '#9A7B4F',
+                                    color: 'white',
+                                    padding: '0.75rem 1rem',
+                                    borderRadius: '0.5rem',
+                                    border: 'none',
+                                    fontWeight: '600',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    cursor: 'pointer',
+                                    transition: 'background-color 0.3s',
+                                    fontFamily: 'inherit',
+                                    marginBottom: '0.75rem'
+                                }}
+                                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#8a6d46'}
+                                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#9A7B4F'}
+                            >
+                                {t.homeButton}
                             </button>
 
                             {/* Language Toggle Button */}
@@ -447,7 +475,7 @@ const WeddingNeenu: React.FC = () => {
                                 color: '#9A7B4F',
                                 fontFamily: "'Great Vibes', cursive"
                             }}>
-                                {t.modalTitle}
+                                {showModal === 'wedding' ? t.modalTitle : t.homeModalTitle}
                             </h2>
                              <div style={{
                                  color: '#374151',
@@ -474,12 +502,13 @@ const WeddingNeenu: React.FC = () => {
                             }}
                             onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#8a6d46'}
                             onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#9A7B4F'}
-                            onClick={() => window.open("https://maps.app.goo.gl/uxvTZ5S6314qRRyZ9", "_blank")}
+                            onClick={() => window.open(showModal === 'home' ? 'https://maps.app.goo.gl/i5JA34bLCU3hJyuG8' : 
+                                'https://maps.app.goo.gl/uxvTZ5S6314qRRyZ9',  "_blank")}
                             >
                                 {t.mapsButton}
                             </div>
 
-                            <iframe 
+                            {showModal === 'wedding' ? <iframe 
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3098.9237928073953!2d75.625248!3d31.948601900000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391b9ed248b9f76f%3A0x9484dade3197b6e0!2sVishal%20Farm%20-%20Best%20Banquet%20Hall%20in%20Mukerian!5e1!3m2!1sen!2sin!4v1758357737634!5m2!1sen!2sin" 
                                 width="100%" 
                                 height="250" 
@@ -488,6 +517,15 @@ const WeddingNeenu: React.FC = () => {
                                 loading="lazy" 
                                 referrerPolicy="no-referrer-when-downgrade"
                             />
+                            : <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d474.65726729452257!2d75.8755631!3d30.863121!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e1!3m2!1sen!2sin!4v1759931151674!5m2!1sen!2sin" 
+                                width="100%" 
+                                height="250" 
+                                style={{border: 0}} 
+                                allowFullScreen={true} 
+                                loading="lazy" 
+                                referrerPolicy="no-referrer-when-downgrade"
+                            />}
                             </div>
                             <button 
                                 onClick={closeModal}
