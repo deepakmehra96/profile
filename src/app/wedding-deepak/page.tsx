@@ -13,7 +13,7 @@ const WeddingNeenu: React.FC = () => {
             date: "on Sunday, 02 November 2025",
             parentsOfBride: "Parents of the Bride",
             parentsOfGroom: "Parents of the Groom",
-            brideParnets: "Smt. Gurmeet kaur & Sh. Ram Kishan",
+            brideParnets: "Smt. Gurmeet Kaur & Sh. Ram Kishan",
             groomParents: "Smt. Vandana Rani & Sh. Naresh Mehra",
             arrival: "Departure",
             lunch: "Lunch",
