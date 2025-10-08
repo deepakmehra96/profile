@@ -15,7 +15,7 @@ const WeddingNeenu: React.FC = () => {
             parentsOfGroom: "Parents of the Groom",
             brideParnets: "Smt. Gurmeet Kaur & Sh. Ram Kishan",
             groomParents: "Smt. Vandana Rani & Sh. Naresh Mehra",
-            arrival: "Departure",
+            arrival: "Baraat Departure",
             lunch: "Lunch",
             venue: "Venue",
             venueName: "Vishal farm",
@@ -38,7 +38,7 @@ const WeddingNeenu: React.FC = () => {
             parentsOfGroom: "वर के माता-पिता",
             brideParnets: "श्रीमती गुरमीत कौर एवं श्री राम किशन",
             groomParents: "श्रीमती वंदना रानी एवं श्री नरेश मेहरा",
-            arrival: "जाना",
+            arrival: "बरात जाना",
             lunch: "भोजन",
             venue: "स्थान",
             venueName: "विशाल फार्म",
@@ -173,6 +173,13 @@ const WeddingNeenu: React.FC = () => {
                                 color: '#9A7B4F'
                             }}>
                                 {t.groom}
+                                <p style={{
+                                    fontSize: '1.25rem',
+                                    fontWeight: '600',
+                                    color: '#1F2937'
+                                }}>
+                                    {t.groomParents}
+                                </p>
                             </h1>
 
                             <p style={{
@@ -189,6 +196,13 @@ const WeddingNeenu: React.FC = () => {
                                 color: '#9A7B4F'
                             }}>
                                 {t.bride}
+                                <p style={{
+                                    fontSize: '1.25rem',
+                                    fontWeight: '600',
+                                    color: '#1F2937'
+                                }}>
+                                    {t.brideParnets}
+                                </p>
                             </h1>
                          
                             
@@ -217,51 +231,6 @@ const WeddingNeenu: React.FC = () => {
                             flexDirection: 'column',
                             justifyContent: 'center'
                         }} className="md-half-width">
-
-                            <div style={{ marginBottom: '2rem' }}>
-                                <p style={{
-                                    letterSpacing: '0.1em',
-                                    textTransform: 'uppercase',
-                                    fontSize: '1rem',
-                                    color: '#6B7280',
-                                    marginBottom: '0.5rem'
-                                }}>
-                                    {t.parentsOfGroom}
-                                </p>
-                                <p style={{
-                                    fontSize: '1.25rem',
-                                    fontWeight: '600',
-                                    color: '#1F2937'
-                                }}>
-                                    {t.groomParents}
-                                </p>
-                            </div>
-
-                            <div style={{ marginBottom: '2rem' }}>
-                                <p style={{
-                                    letterSpacing: '0.1em',
-                                    textTransform: 'uppercase',
-                                    fontSize: '1rem',
-                                    color: '#6B7280',
-                                    marginBottom: '0.5rem'
-                                }}>
-                                    {t.parentsOfBride}
-                                </p>
-                                <p style={{
-                                    fontSize: '1.25rem',
-                                    fontWeight: '600',
-                                    color: '#1F2937'
-                                }}>
-                                    {t.brideParnets}
-                                </p>
-                            </div>
-
-                            <div style={{
-                                width: '120px',
-                                height: '1px',
-                                background: 'linear-gradient(to right, transparent, #D4C1A8, transparent)',
-                                margin: '1rem auto'
-                            }} />
 
                             <div style={{
                                 display: 'grid',
@@ -307,6 +276,13 @@ const WeddingNeenu: React.FC = () => {
                                 </div>
                             </div>
 
+                            <div style={{
+                                width: '120px',
+                                height: '1px',
+                                background: 'linear-gradient(to right, transparent, #D4C1A8, transparent)',
+                                margin: '1.5rem auto'
+                            }} />
+
                             <div style={{ marginTop: '1rem' }}>
                                 <p style={{
                                     letterSpacing: '0.1em',
@@ -339,7 +315,7 @@ const WeddingNeenu: React.FC = () => {
                                 margin: '1.5rem auto'
                             }} />
 
-                            <div style={{ margin: '0.5rem 0' }}>
+                            <div style={{ margin: '0.5rem 0', marginBottom: '1.5rem' }}>
                                 <p style={{
                                     letterSpacing: '0.1em',
                                     textTransform: 'uppercase',
