@@ -478,7 +478,7 @@ const WeddingNeenu: React.FC = () => {
                             }}
                             onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#8a6d46'}
                             onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#9A7B4F'}
-                            onClick={() => window.open(showModal === 'home' ? 'https://maps.app.goo.gl/i5JA34bLCU3hJyuG8' : 
+                            onClick={() => window.open(showModal === 'home' ? 'https://maps.app.goo.gl/PJT6fupAA8wG7yi79' : 
                                 'https://maps.app.goo.gl/uxvTZ5S6314qRRyZ9',  "_blank")}
                             >
                                 {t.mapsButton}
@@ -494,7 +494,7 @@ const WeddingNeenu: React.FC = () => {
                                 referrerPolicy="no-referrer-when-downgrade"
                             />
                             : <iframe 
-                                src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d474.65726729452257!2d75.8755631!3d30.863121!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e1!3m2!1sen!2sin!4v1759931151674!5m2!1sen!2sin" 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3134.977920195113!2d75.87383877509322!3d30.863130679319816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391a836248c0dc57%3A0xc4eb9e273729089b!2sDeepak%20Mehra!5e1!3m2!1sen!2sin!4v1760196929063!5m2!1sen!2sin" 
                                 width="100%" 
                                 height="250" 
                                 style={{border: 0}} 
