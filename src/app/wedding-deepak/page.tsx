@@ -22,7 +22,7 @@ const WeddingNeenu: React.FC = () => {
             venueAddress: "talwara road, Mukerian",
             rsvp: "RSVP",
             rsvpFamily: "Mehra Family",
-            locationButton: "Go to Palace Location",
+            locationButton: "Go to Palace Location (Mukerian)",
             homeButton: "Go to Home Location (Ludhiana)",
             modalTitle: "Palace Location",
             homeModalTitle: "Home Location (Ludhaina)",
@@ -45,7 +45,7 @@ const WeddingNeenu: React.FC = () => {
             venueAddress: "तलवाड़ा रोड, मुकेरियां",
             rsvp: "उपस्थिति सूचना",
             rsvpFamily: "मेहरा परिवार",
-            locationButton: "शादी का स्थान देखें",
+            locationButton: "शादी का स्थान देखें (मुकेरियां)",
             homeButton: "घर का स्थान देखें (लुधियाना)",
             modalTitle: "शादी का स्थान (पलेस)",
             homeModalTitle: "घर का स्थान (लुधियाना)",
@@ -167,11 +167,12 @@ const WeddingNeenu: React.FC = () => {
                             </p>
 
                             <h1 style={{
-                                fontFamily: "'Great Vibes', cursive",
                                 fontSize: '4rem',
                                 margin: '1.5rem 0',
                                 color: '#9A7B4F'
-                            }}>
+                            }}
+                            className="text-greatvibes"
+                            >
                                 {t.groom}
                                 <p style={{
                                     fontSize: '1.25rem',
@@ -194,7 +195,9 @@ const WeddingNeenu: React.FC = () => {
                                 fontSize: '4rem',
                                 margin: '1.5rem 0',
                                 color: '#9A7B4F'
-                            }}>
+                            }}
+                            className="text-greatvibes"
+                            >
                                 {t.bride}
                                 <p style={{
                                     fontSize: '1.25rem',

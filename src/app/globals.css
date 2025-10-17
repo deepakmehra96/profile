@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+.text-greatvibes {
+  font-family: 'Great Vibes', cursive;
+  -webkit-font-smoothing: antialiased; /* for Mac/WebKit */
+  -moz-osx-font-smoothing: grayscale;  /* for Mac */
+  text-rendering: optimizeLegibility;  /* smoother curves */
+  font-weight: 400;
+  letter-spacing: 1px; /* fixes Windows bold look */
+  transform: scaleY(1.02); /* optional tweak for balance */
+}
+
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
